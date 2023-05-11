@@ -76,10 +76,10 @@ class BeatEvent {
     }
 }
 
-interface BeatEventHandler {
+export interface BeatEventHandler {
     onBeatEventTriggered(e:BeatEventArgs):void;
 }
 
-type BeatEventArgs = {
+export type BeatEventArgs = {
     readonly secondsElapsed:number;
 }

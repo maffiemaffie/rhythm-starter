@@ -1,6 +1,14 @@
-import { Beatmap, BeatEventArgs, BeatEventHandler } from "./beatmap";
+import { Beatmap } from "./beatmap";
 
 export class BeatManager {
-    private audioCtx:AudioContext;
-    
+    private beatmap:Beatmap;
+    private lastUpdate:number = 0;
+
+    /**
+     * update
+     */
+    public update(currentTime) {
+        this.beatmap.stepToNow(this.lastUpdate, currentTime);
+        this.lastUpdate = currentTime;
+    }
 }

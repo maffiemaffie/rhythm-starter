@@ -2,6 +2,10 @@ export class TrackPlayer {
     private audioCtx:AudioContext;
     private track:HTMLMediaElement;
 
+    get now() {
+        return this.track.currentTime * 1000;
+    }
+
     public constructor(filepath:string) {
         this.audioCtx = new AudioContext();
         this.track = new Audio();
@@ -17,4 +21,6 @@ export class TrackPlayer {
     public pause() {
         this.track.pause();
     }
+
+    
 }

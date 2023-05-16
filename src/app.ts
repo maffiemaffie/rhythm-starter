@@ -2,4 +2,7 @@
 import { TrackPlayer } from './track-playback';
 
 const player = new TrackPlayer('../assets/120-bpm.mp3');
-player.play();
+
+document.querySelector('#play-btn').addEventListener('click', () => {
+    player.play();
+});
